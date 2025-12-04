@@ -101,16 +101,6 @@ public class ImmichApiClient : IDisposable
     }
 
     /// <summary>
-    /// Adds assets to albums
-    /// </summary>
-    public async Task<bool> AddAssetsToAlbumsAsync(Dictionary<string, List<string>> albumAssets)
-    {
-        var request = new AlbumsAddAssetsDto { Albums = albumAssets };
-        var response = await _httpClient.PostAsJsonAsync("/api/albums/assets", request, _jsonOptions);
-        return response.IsSuccessStatusCode;
-    }
-
-    /// <summary>
     /// Adds assets to a specific album
     /// </summary>
     public async Task<bool> AddAssetsToAlbumAsync(string albumId, List<string> assetIds)
@@ -146,32 +136,6 @@ public class ImmichApiClient : IDisposable
         
         var response = await _httpClient.SendAsync(request);
         return response.IsSuccessStatusCode;
-    }
-
-    /// <summary>
-    /// Deletes duplicate records (not the assets themselves)
-    /// </summary>
-    public async Task<bool> DeleteDuplicateRecordsAsync(List<string> duplicateIds)
-    {
-        var request = new HttpRequestMessage(HttpMethod.Delete, "/api/duplicates")
-        {
-            Content = JsonContent.Create(new BulkIdsDto { Ids = duplicateIds }, options: _jsonOptions)
-        };
-        
-        var response = await _httpClient.SendAsync(request);
-        return response.IsSuccessStatusCode;
-    }
-
-    /// <summary>
-    /// Gets detailed information about a specific asset
-    /// </summary>
-    public async Task<Asset?> GetAssetAsync(string assetId)
-    {
-        var response = await _httpClient.GetAsync($"/api/assets/{assetId}");
-        if (!response.IsSuccessStatusCode)
-            return null;
-
-        return await response.Content.ReadFromJsonAsync<Asset>(_jsonOptions);
     }
 
     public void Dispose()

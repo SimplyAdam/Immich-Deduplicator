@@ -52,29 +52,3 @@ public class StackResponseDto
     public string PrimaryAssetId { get; set; } = string.Empty;
     public List<string> AssetIds { get; set; } = [];
 }
-
-/// <summary>
-/// Request body for adding assets to albums
-/// </summary>
-public class AlbumsAddAssetsDto
-{
-    public Dictionary<string, List<string>> Albums { get; set; } = [];
-}
-
-/// <summary>
-/// Response from adding assets to albums
-/// </summary>
-public class AlbumsAddAssetsResponseDto
-{
-    public List<BulkIdResponseDto> Albums { get; set; } = [];
-}
-
-/// <summary>
-/// Response for bulk ID operations
-/// </summary>
-public class BulkIdResponseDto
-{
-    public string Id { get; set; } = string.Empty;
-    public bool Success { get; set; }
-    public string? Error { get; set; }
-}

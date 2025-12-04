@@ -209,23 +209,6 @@ public class ConsoleUI
     }
 
     /// <summary>
-    /// Shows a processing progress display
-    /// </summary>
-    public async Task ShowProgressAsync(string description, Func<ProgressContext, Task> action)
-    {
-        await AnsiConsole.Progress()
-            .AutoClear(false)
-            .HideCompleted(false)
-            .Columns(
-                new TaskDescriptionColumn(),
-                new ProgressBarColumn(),
-                new PercentageColumn(),
-                new SpinnerColumn()
-            )
-            .StartAsync(action);
-    }
-
-    /// <summary>
     /// Updates the status line (overwrites the current line)
     /// </summary>
     public void UpdateStatus(string message)
