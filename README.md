@@ -5,6 +5,9 @@ A command-line tool to identify and remove duplicate images and videos in an [Im
 ![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?logo=dotnet)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+> [!CAUTION]
+> **Always back up your Immich database before running any tools that modify your library, including this one.** While this tool includes a dry-run mode for safe previewing and it will only soft delete assets in live mode, mistakes can happen. Protect your data!
+
 ## Features
 
 - 🔍 **Smart Detection** - Categorizes duplicates by checksum, filename, timestamp, and file type
@@ -149,6 +152,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+We take no responsibility for any data loss. Use at your own risk.
 
 ## Acknowledgments
 
