@@ -16,7 +16,7 @@ A command-line tool to identify and remove duplicate images and videos in an [Im
 
 ## Screenshot
 
-![Immich Deduplicator in action](ImmichDeduplicator/screenshots/Screenshot_Processing.png)
+![Immich Deduplicator in action](screenshots/Screenshot_Processing.png)
 
 ## Prerequisites
 
