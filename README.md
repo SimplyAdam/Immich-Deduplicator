@@ -14,6 +14,10 @@ A command-line tool to identify and remove duplicate images and videos in an [Im
 - 📝 **Detailed Logging** - Comprehensive log file for audit and review
 - ⚡ **Flexible Filtering** - Skip specific categories or limit processing count
 
+## Screenshot
+
+![Immich Deduplicator in action](ImmichDeduplicator/screenshots/Screenshot_Processing.png)
+
 ## Prerequisites
 
 - [.NET 10 SDK](https://dotnet.microsoft.com/download) or later
